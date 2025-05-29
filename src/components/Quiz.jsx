@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import Questions from "../questions.js";
-import quizCompleteImg from "../assets/quiz-complete.png";
 import Question from "./Question.jsx";
+import Summary from "./Summary.jsx";
 
 function Quiz() {
 
@@ -18,12 +18,7 @@ function Quiz() {
     const handleSkipAnswer = useCallback(() => handleSelectAnswer(null), [handleSelectAnswer]);
 
     if (isQuizComplete) {
-        return (
-            <div id="summary">
-                <img src={quizCompleteImg} alt="Trophy icon" />
-                <h2>Quiz Finished!</h2>
-            </div>
-        );
+        return <Summary userAnswers ={userAnswers} />
     }
 
  return (
